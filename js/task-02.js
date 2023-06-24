@@ -10,7 +10,7 @@ const ingredients = [
 const listElem = document.querySelector("#ingredients");
 // console.dir(listElem);
 
-const readyElem = ingredients.map((ingredient) => {
+const readyElements = ingredients.map((ingredient) => {
   // console.log(ingredient);
   const itemElem = document.createElement("li");
   itemElem.textContent = ingredient;
@@ -20,5 +20,22 @@ const readyElem = ingredients.map((ingredient) => {
 });
 
 listElem.append(...readyElem);
-
 console.log(listElem);
+
+Вариант 2
+const listElem = document.querySelector("#ingredients");
+
+const makeIngredientsListIlem = ingredients => {
+  return ingredients.map(ingredient => {    
+    const itemElem = document.createElement("li");
+    itemElem.textContent = ingredient;
+    itemElem.classList.add("item")
+    return itemElem;
+  });  
+}
+
+const readyElements = makeIngredientsListIlem(ingredients);
+listElem.append(...readyElem);
+  
+
+
