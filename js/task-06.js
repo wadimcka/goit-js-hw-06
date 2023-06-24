@@ -1,18 +1,7 @@
 const targetInput = document.querySelector("#validation-input");
 console.dir(targetInput);
-// targetInput.addEventListener("focus", onTargetInputFocus);
-// targetInput.addEventListener("input", onTargetInputTextInput);
+
 targetInput.addEventListener("blur", onTargetInputBlur);
-
-// function onTargetInputFocus(event) {
-//   targetOutput.textContent = "";
-//   targetInput.addEventListener("input", onTargetInputTextInput);
-// }
-
-// function onTargetInputTextInput(event) {
-//     targetInput.attributes.
-//   //   console.log((targetOutput.textContent = targetInput.value));
-// }
 
 function onTargetInputBlur(event) {
   console.log(targetInput.value.length);
