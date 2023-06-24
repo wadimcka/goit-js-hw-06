@@ -19,23 +19,20 @@ const readyElements = ingredients.map((ingredient) => {
   return itemElem;
 });
 
-listElem.append(...readyElem);
+listElem.append(...readyElements);
 console.log(listElem);
 
-Вариант 2
-const listElem = document.querySelector("#ingredients");
+// Вариант 2
+// const listElem = document.querySelector("#ingredients");
 
-const makeIngredientsListIlem = ingredients => {
-  return ingredients.map(ingredient => {    
-    const itemElem = document.createElement("li");
-    itemElem.textContent = ingredient;
-    itemElem.classList.add("item")
-    return itemElem;
-  });  
-}
+// const makeIngredientsListIlem = ingredients => {
+//   return ingredients.map(ingredient => {
+//     const itemElem = document.createElement("li");
+//     itemElem.textContent = ingredient;
+//     itemElem.classList.add("item")
+//     return itemElem;
+//   });
+// }
 
-const readyElements = makeIngredientsListIlem(ingredients);
-listElem.append(...readyElem);
-  
-
-
+// const readyElements = makeIngredientsListIlem(ingredients);
+// listElem.append(...readyElem);
