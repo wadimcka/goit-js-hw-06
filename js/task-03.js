@@ -20,8 +20,8 @@ const makeGalleryListItemMurkup = (images) => {
 // console.log(makeGalleryListItemMurkup(images[0]));
 const makeGalleryListArray = images.map(makeGalleryListItemMurkup).join("");
 // console.log(makeGalleryListArray);
-const galleryList = document.querySelector(".gallery");
+const galleryListEl = document.querySelector(".gallery");
 // console.dir(galleryList);
-galleryList.insertAdjacentHTML("beforeend", makeGalleryListArray);
+galleryListEl.insertAdjacentHTML("beforeend", makeGalleryListArray);
 // console.log(galleryList);
-console.log(galleryList);
+console.log(galleryListEl);

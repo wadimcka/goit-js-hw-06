@@ -1,5 +1,5 @@
 let counterValue = 0;
-const counter = document.querySelector("#value");
+const counterEl = document.querySelector("#value");
 // console.log(counter);
 const counterAtionsElem = document.querySelectorAll("#counter button");
 // console.log(counterAtionsElem);
@@ -15,7 +15,7 @@ console.log(counterAtionsElem[0].dataset.action);
 function onMinusButtonClick() {
   if (counterAtionsElem[0].dataset.action === "decrement") {
     counterValue -= 1;
-    counter.textContent = counterValue;
+    counterEl.textContent = counterValue;
     console.log(plus.textContent);
   }
 }
@@ -23,7 +23,7 @@ function onMinusButtonClick() {
 function onPlusButtonClick() {
   if (counterAtionsElem[1].dataset.action === "increment") {
     counterValue += 1;
-    counter.textContent = counterValue;
+    counterEl.textContent = counterValue;
     console.log(plus.textContent);
   }
 }

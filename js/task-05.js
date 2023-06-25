@@ -1,24 +1,24 @@
-const targetInput = document.querySelector("#name-input");
-const targetOutput = document.querySelector("#name-output");
+const targetInputEl = document.querySelector("#name-input");
+const targetOutputEl = document.querySelector("#name-output");
 // console.dir(targetOutput);
 
-targetInput.addEventListener("focus", onTargetInputFocus);
-targetInput.addEventListener("input", onTargetInputTextInput);
-targetInput.addEventListener("blur", onTargetInputBlur);
+targetInputEl.addEventListener("focus", onTargetInputFocus);
+targetInputEl.addEventListener("input", onTargetInputTextInput);
+targetInputEl.addEventListener("blur", onTargetInputBlur);
 
 function onTargetInputFocus(event) {
-  targetOutput.textContent = "";
-  targetInput.addEventListener("input", onTargetInputTextInput);
+  targetOutputEl.textContent = "";
+  targetInputEl.addEventListener("input", onTargetInputTextInput);
 }
 
 function onTargetInputTextInput(event) {
-  console.log((targetOutput.textContent = targetInput.value));
+  console.log((targetOutputEl.textContent = targetInputEl.value));
 }
 
 function onTargetInputBlur(event) {
-  targetInput.removeEventListener("input", onTargetInputTextInput);
-  targetInput.value = "";
-  if (targetInput.value === "") {
-    targetOutput.textContent = "Anonymous";
+  targetInputEl.removeEventListener("input", onTargetInputTextInput);
+  targetInputEl.value = "";
+  if (targetInputEl.value === "") {
+    targetOutputEl.textContent = "Anonymous";
   }
 }
