@@ -17,11 +17,8 @@ const makeGalleryListItemMurkup = (images) => {
   const { url, alt } = images;
   return `<li><img src="${url}" alt="${alt}"></li>`;
 };
-// console.log(makeGalleryListItemMurkup(images[0]));
+
 const makeGalleryListArray = images.map(makeGalleryListItemMurkup).join("");
-// console.log(makeGalleryListArray);
 const galleryListEl = document.querySelector(".gallery");
-// console.dir(galleryList);
 galleryListEl.insertAdjacentHTML("beforeend", makeGalleryListArray);
-// console.log(galleryList);
 console.log(galleryListEl);

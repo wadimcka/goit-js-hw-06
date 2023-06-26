@@ -1,10 +1,8 @@
 const formmainEle = document.querySelector(".login-form");
-// console.log(formmainEle);
 
 formmainEle.addEventListener("submit", onTargetButtonClick);
 
 function onTargetButtonClick(event) {
-  //   console.dir(event.currentTarget);
   event.preventDefault();
 
   const { email, password } = event.currentTarget.elements;
