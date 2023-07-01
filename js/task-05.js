@@ -1,24 +1,12 @@
-const targetInputEl = document.querySelector("#name-input");
-const targetOutputEl = document.querySelector("#name-output");
-// console.dir(targetOutput);
+const inputEl = document.querySelector("#name-input");
+const outputEl = document.querySelector("#name-output");
 
-targetInputEl.addEventListener("focus", onTargetInputFocus);
-targetInputEl.addEventListener("input", onTargetInputTextInput);
-targetInputEl.addEventListener("blur", onTargetInputBlur);
+inputEl.addEventListener("input", onInputTextInput);
 
-function onTargetInputFocus(event) {
-  targetOutputEl.textContent = "";
-  targetInputEl.addEventListener("input", onTargetInputTextInput);
-}
-
-function onTargetInputTextInput(event) {
-  console.log((targetOutputEl.textContent = targetInputEl.value));
-}
-
-function onTargetInputBlur(event) {
-  targetInputEl.removeEventListener("input", onTargetInputTextInput);
-  targetInputEl.value = "";
-  if (targetInputEl.value === "") {
-    targetOutputEl.textContent = "Anonymous";
+function onInputTextInput(event) {
+  if (inputEl.value === "") {
+    console.log((outputEl.textContent = "Anonymous"));
+  } else {
+    console.log((outputEl.textContent = inputEl.value));
   }
 }
