@@ -1,3 +1,15 @@
+// const makeGalleryListItemMurkup = (images) => {
+//   const { url, alt } = images;
+//   return `<li><img src="${url}" alt="${alt}"></li>`;
+// };
+
+// const makeGalleryListArray = images.map(makeGalleryListItemMurkup).join("");
+// const galleryListEl = document.querySelector(".gallery");
+// galleryListEl.insertAdjacentHTML("beforeend", makeGalleryListArray);
+// console.log(galleryListEl);
+
+// 13.02.25
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -13,12 +25,14 @@ const images = [
   },
 ];
 
-const makeGalleryListItemMurkup = (images) => {
-  const { url, alt } = images;
-  return `<li><img src="${url}" alt="${alt}"></li>`;
-};
+const listEl = document.querySelector("Ul.gallery");
+console.log(listEl);
 
-const makeGalleryListArray = images.map(makeGalleryListItemMurkup).join("");
-const galleryListEl = document.querySelector(".gallery");
-galleryListEl.insertAdjacentHTML("beforeend", makeGalleryListArray);
-console.log(galleryListEl);
+function createListItemsMarkup(arr, parentElem) {
+  const liElem = arr
+    .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
+    .join(" ");
+  return parentElem.insertAdjacentHTML("beforeend", liElem);
+}
+
+createListItemsMarkup(images, listEl);
